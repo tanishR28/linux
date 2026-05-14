@@ -1,662 +1,424 @@
-I’ll make this as clean viva-ready notes you can directly paste into a Markdown file.
-
-# NLP Practical Viva Notes
-
----
-
-# Q1. Tokenization Task
-
-## Theory
-
-Tokenization is the process of breaking text into smaller units called tokens.
-
-Types:
-
-* Sentence Tokenization → paragraph into sentences
-* Word Tokenization → sentence into words
-
-Used in:
-
-* NLP preprocessing
-* Search engines
-* Chatbots
-
-## Important Functions
-
-| Syntax    | Purpose             |
-| --------- | ------------------- |
-| `split()` | split text          |
-| `len()`   | count tokens        |
-| `strip()` | remove extra spaces |
-
-## Viva Points
-
-* Token = smallest text unit
-* Word tokenization splits sentence into words
-* Sentence tokenization splits paragraph into sentences
+```md
+# Machine Learning Practical Theory Notes
 
 ---
 
-# Q2. Stopword Removal
+# 1. K-Nearest Neighbors (KNN)
 
-## Theory
+## Introduction
+K-Nearest Neighbors (KNN) is a supervised machine learning algorithm used for classification and regression. It predicts output based on the nearest neighboring data points.
 
-Stopwords are common words that carry little meaning.
+## Working Principle
+1. Choose value of K
+2. Calculate distance from test point to all training points
+3. Select K nearest neighbors
+4. Use majority voting for classification
 
-Examples:
+## Distance Formula
 
-```python
-is, the, and, a, an
-```
+Euclidean Distance:
 
-Removing stopwords:
-
-* reduces noise
-* improves NLP efficiency
+:contentReference[oaicite:0]{index=0}
 
 ## Important Concepts
+- Distance Metrics
+- Majority Voting
+- Lazy Learning
+- Instance-Based Learning
 
-* Manual stopword list
-* Filtering meaningful words
+## Advantages
+- Simple and easy
+- No training phase
+- Good for small datasets
 
-## Viva Points
+## Disadvantages
+- Slow for large datasets
+- Sensitive to noise
+- Requires feature scaling
 
-* Stopwords are frequently occurring words
-* Used in preprocessing
-
----
-
-# Q3. Stemming vs Lemmatization
-
-## Stemming
-
-Removes suffixes using simple rules.
-
-Example:
-
-```python
-playing → play
-worked → work
-```
-
-May produce invalid words.
+## Applications
+- Recommendation systems
+- Image classification
+- Medical diagnosis
 
 ---
 
-## Lemmatization
+# 2. Linear Regression
 
-Converts words into meaningful dictionary root forms.
+## Introduction
+Linear Regression is a supervised learning algorithm used for predicting continuous numerical values.
 
-Example:
+## Equation
 
-```python
-better → good
-went → go
-```
 
-More accurate than stemming.
+::contentReference[oaicite:1]{index=1}
 
----
 
-## Difference
+## Working Principle
+- Finds best-fit straight line
+- Minimizes prediction error
 
-| Stemming                 | Lemmatization             |
-| ------------------------ | ------------------------- |
-| Rule-based cutting       | Dictionary-based          |
-| Faster                   | More accurate             |
-| May create invalid words | Produces meaningful words |
+## Important Concepts
+- Regression
+- Best Fit Line
+- Error Minimization
+- Numerical Prediction
 
----
+## Metrics Used
+- MAE
+- MSE
+- RMSE
+- R² Score
 
-# Q4. Morphological Analysis
+## Advantages
+- Simple and fast
+- Easy interpretation
 
-## Theory
+## Disadvantages
+- Works only for linear data
+- Sensitive to outliers
 
-Morphology studies word structure.
-
-Words are divided into morphemes.
-
----
-
-## Morpheme
-
-Smallest meaningful unit of language.
-
-Example:
-
-```python
-unhappy = un + happy
-```
+## Applications
+- Salary prediction
+- House price prediction
+- Sales forecasting
 
 ---
 
-## Free Morpheme
+# 3. Decision Tree
 
-Can stand alone.
+## Introduction
+Decision Tree is a supervised algorithm that works like a flowchart tree structure.
 
-Examples:
+## Structure
+- Root Node
+- Decision Node
+- Leaf Node
 
-```python
-happy, play, nation
-```
+## Working Principle
+- Splits data recursively
+- Uses feature conditions
+- Creates classification rules
 
----
+## Gini Index Formula
 
-## Bound Morpheme
+:contentReference[oaicite:2]{index=2}
 
-Cannot stand alone.
+## Important Concepts
+- Recursive Splitting
+- Tree Traversal
+- Impurity Reduction
 
-Examples:
+## Advantages
+- Easy visualization
+- Handles non-linear data
 
-```python
-un, ed, ness
-```
+## Disadvantages
+- Overfitting
+- Sensitive to noise
 
----
-
-# Q5. POS Tagging
-
-## Theory
-
-Part-of-Speech tagging assigns grammatical categories to words.
-
-Examples:
-
-* Noun
-* Verb
-* Adjective
-* Adverb
-
----
-
-## Common POS
-
-| POS         | Meaning            |
-| ----------- | ------------------ |
-| Noun        | person/place/thing |
-| Verb        | action             |
-| Adjective   | describes noun     |
-| Adverb      | describes verb     |
-| Conjunction | joins words        |
-| Article     | a, an, the         |
+## Applications
+- Fraud detection
+- Medical diagnosis
 
 ---
 
-## Rule Examples
+# 4. Support Vector Machine (SVM) - Linear
 
-| Rule                  | POS    |
-| --------------------- | ------ |
-| words ending in `-ly` | Adverb |
-| words ending in `-ed` | Verb   |
+## Introduction
+SVM is a supervised algorithm used for classification by finding optimal separating hyperplane.
 
----
+## Hyperplane Formula
 
-# Q6. Ambiguity Detection
+:contentReference[oaicite:3]{index=3}
 
-## Theory
+## Concepts Used
+- Hyperplane
+- Margin
+- Support Vectors
 
-Ambiguity means multiple meanings.
+## Advantages
+- High accuracy
+- Effective in high dimensions
 
----
+## Disadvantages
+- Slower on large datasets
+- Hard parameter tuning
 
-## Types
-
-### Syntactic Ambiguity
-
-Multiple sentence structures.
-
-Example:
-
-```python
-I saw the man with a telescope
-```
+## Applications
+- Face recognition
+- Text classification
 
 ---
 
-### Semantic Ambiguity
+# 5. SVM for Non-Linear Data
 
-Word has multiple meanings.
+## Introduction
+Non-linear SVM uses kernel functions to separate complex datasets.
 
-Example:
+## Kernel Functions
+- RBF Kernel
+- Polynomial Kernel
+- Sigmoid Kernel
 
-```python
-bank
-```
+## RBF Formula
 
----
+:contentReference[oaicite:4]{index=4}
 
-# Q7. Bag of Words (BoW)
+## Concepts Used
+- Kernel Trick
+- Feature Transformation
+- Non-linear Classification
 
-## Theory
+## Advantages
+- Handles complex patterns
+- Flexible classification
 
-Bag of Words represents text using word frequencies.
-
-Steps:
-
-1. Create vocabulary
-2. Count word occurrences
-3. Build matrix
-
----
-
-## Example
-
-| Word | Count |
-| ---- | ----- |
-| NLP  | 2     |
-| AI   | 1     |
+## Disadvantages
+- Computationally expensive
+- Parameter tuning needed
 
 ---
 
-## Viva Points
+# 6. Random Forest (Bagging)
 
-* Ignores grammar/order
-* Focuses on frequency
+## Introduction
+Random Forest is an ensemble learning algorithm using multiple Decision Trees.
 
----
+## Working Principle
+1. Generate random subsets
+2. Train multiple trees
+3. Combine outputs using voting
 
-# Q8. TF-IDF
+## Majority Voting Formula
 
-## Theory
+:contentReference[oaicite:5]{index=5}
 
-TF-IDF measures importance of words.
+## Concepts Used
+- Bagging
+- Bootstrap Sampling
+- Ensemble Learning
 
----
+## Advantages
+- High accuracy
+- Reduces overfitting
 
-## TF (Term Frequency)
+## Disadvantages
+- High memory usage
+- Harder interpretation
 
-TF = \frac{\text{Word Count}}{\text{Total Words}}
-
----
-
-## IDF (Inverse Document Frequency)
-
-IDF = \log\left(\frac{\text{Total Documents}}{\text{Documents containing word}}\right)
-
----
-
-## TF-IDF
-
-TF\text{-}IDF = TF \times IDF
-
----
-
-## Viva Points
-
-* Rare important words get high TF-IDF
-* Common words get low score
+## Applications
+- Stock prediction
+- Recommendation systems
 
 ---
 
-# Q9. Cosine Similarity
+# 7. AdaBoost / XGBoost (Boosting)
 
-## Theory
+## Introduction
+Boosting combines weak learners sequentially to improve performance.
 
-Measures similarity between vectors/documents.
+## AdaBoost Formula
 
-Value:
+:contentReference[oaicite:6]{index=6}
 
-* 1 → identical
-* 0 → unrelated
+## XGBoost Objective
+
+:contentReference[oaicite:7]{index=7}
+
+## Concepts Used
+- Sequential Learning
+- Error Correction
+- Weak Learners
+
+## Advantages
+- Very accurate
+- Handles complex datasets
+
+## Disadvantages
+- Slower training
+- More tuning required
+
+## Applications
+- Fraud detection
+- Ranking systems
 
 ---
+
+# 8. K-Means Clustering
+
+## Introduction
+K-Means is an unsupervised learning algorithm used for clustering similar data points.
+
+## Working Principle
+1. Choose K clusters
+2. Assign nearest points
+3. Update centroids
+4. Repeat until convergence
+
+## Distance Formula
+
+:contentReference[oaicite:8]{index=8}
+
+## Concepts Used
+- Clustering
+- Centroids
+- Euclidean Distance
+
+## Advantages
+- Simple and fast
+- Easy implementation
+
+## Disadvantages
+- Sensitive to outliers
+- Need predefined K
+
+## Applications
+- Customer segmentation
+- Image compression
+
+---
+
+# 9. K-Modes Clustering
+
+## Introduction
+K-Modes is clustering algorithm for categorical data.
+
+## Concepts Used
+- Categorical Clustering
+- Mode-Based Clustering
+- Matching Dissimilarity
+
+## Advantages
+- Handles categorical values
+- Simple implementation
+
+## Disadvantages
+- Choosing K is difficult
+- Sensitive initialization
+
+## Applications
+- Market segmentation
+- Survey analysis
+
+---
+
+# 10. Expectation Maximization (EM)
+
+## Introduction
+Expectation Maximization is a probabilistic clustering algorithm used to find hidden patterns in data.
+
+## Working Principle
+
+### E-Step
+Calculate cluster probabilities.
+
+### M-Step
+Update parameters to maximize likelihood.
+
+## Gaussian Mixture Formula
+
+:contentReference[oaicite:9]{index=9}
+
+## Concepts Used
+- Probability Distribution
+- Gaussian Mixture Model
+- Soft Clustering
+
+## Advantages
+- Handles overlapping clusters
+- Probabilistic output
+
+## Disadvantages
+- Slower than K-Means
+- Sensitive initialization
+
+## Applications
+- Speech recognition
+- Image segmentation
+
+---
+
+# 11. PCA (Principal Component Analysis)
+
+## Introduction
+PCA is dimensionality reduction technique used to reduce features while preserving important information.
+
+## PCA Formula
+
+:contentReference[oaicite:10]{index=10}
+
+## Concepts Used
+- Variance Maximization
+- Feature Reduction
+- Orthogonal Transformation
+
+## Advantages
+- Reduces dimensions
+- Faster training
+
+## Disadvantages
+- Information loss possible
+- Hard interpretation
+
+## Applications
+- Image compression
+- Visualization
+
+---
+
+# 12. SVD (Singular Value Decomposition)
+
+## Introduction
+SVD is matrix factorization technique used for dimensionality reduction.
 
 ## Formula
 
-\text{Cosine Similarity} = \frac{A \cdot B}{|A||B|}
+:contentReference[oaicite:11]{index=11}
+
+## Concepts Used
+- Matrix Factorization
+- Singular Values
+- Low Rank Approximation
+
+## Advantages
+- Powerful decomposition method
+- Useful in NLP and recommendation systems
+
+## Disadvantages
+- Computationally expensive
+
+## Applications
+- Recommendation systems
+- Text mining
 
 ---
 
-## Uses
+# 13. LDA (Linear Discriminant Analysis)
 
-* Recommendation systems
-* NLP similarity
-* Search engines
-
----
-
-# Q11. Naive Bayes Classification
-
-## Theory
-
-Probability-based classification algorithm.
-
-Used in:
-
-* Spam detection
-* Sentiment analysis
-
----
+## Introduction
+LDA is supervised dimensionality reduction technique maximizing class separability.
 
 ## Formula
 
-P(Class|Words) \propto P(Class) \times P(Word_1|Class) \times P(Word_2|Class)
+:contentReference[oaicite:12]{index=12}
+
+## Concepts Used
+- Between-Class Variance
+- Within-Class Variance
+- Feature Extraction
+
+## Advantages
+- Improves class separation
+- Useful for classification
+
+## Disadvantages
+- Assumes normal distribution
+- Sensitive to outliers
+
+## Applications
+- Face recognition
+- Pattern recognition
 
 ---
-
-## Important Terms
-
-| Term                  | Meaning                   |
-| --------------------- | ------------------------- |
-| Prior Probability     | Initial class probability |
-| Likelihood            | Word probability          |
-| Posterior Probability | Final probability         |
-
----
-
-## Viva Points
-
-* Assumes word independence
-* Called “Naive” because of independence assumption
-
----
-
-# Q12. Hidden Markov Model (HMM)
-
-## Theory
-
-HMM is a probabilistic model used for sequence prediction.
-
-Used in:
-
-* POS tagging
-* Speech recognition
-* NLP
-
----
-
-## Components
-
-| Component              | Meaning                    |
-| ---------------------- | -------------------------- |
-| States                 | hidden conditions          |
-| Transition Probability | state-to-state probability |
-| Emission Probability   | observation probability    |
-
----
-
-## Formula
-
-P(O|S) \times P(S_i|S_{i-1})
-
----
-
-# Q13. N-gram Text Generation
-
-## Theory
-
-N-grams are sequences of N words.
-
-| Type    | Example     |
-| ------- | ----------- |
-| Unigram | NLP         |
-| Bigram  | NLP is      |
-| Trigram | NLP is easy |
-
----
-
-## Bigram Generation
-
-Predicts next word using previous word.
-
-Example:
-
-```python
-I love → NLP
 ```
-
----
-
-# Q14. BLEU Score
-
-## Theory
-
-BLEU evaluates similarity between:
-
-* reference sentence
-* candidate sentence
-
-Used in machine translation.
-
----
-
-## Formula
-
-BLEU = \frac{\text{Matching Words}}{\text{Total Candidate Words}}
-
----
-
-## Viva Points
-
-* Higher BLEU → better translation
-* Measures text similarity
-
----
-
-# Q15. Regex-based Text Cleaning
-
-## Theory
-
-Regular Expressions (Regex) are patterns for text matching and cleaning.
-
-Used for:
-
-* removing punctuation
-* removing numbers
-* pattern matching
-
----
-
-## Important Regex
-
-| Regex | Meaning     |
-| ----- | ----------- |
-| `\d`  | digit       |
-| `\w`  | word        |
-| `\s`  | whitespace  |
-| `+`   | one or more |
-
----
-
-## Important Functions
-
-| Function       | Purpose      |
-| -------------- | ------------ |
-| `re.sub()`     | replace      |
-| `re.findall()` | find matches |
-
----
-
-# Q16. CFG Parsing
-
-## Theory
-
-Context-Free Grammar checks sentence validity using grammar rules.
-
----
-
-## Example Rules
-
-S \rightarrow NP\ VP
-
----
-
-## Terms
-
-| Symbol | Meaning     |
-| ------ | ----------- |
-| S      | Sentence    |
-| NP     | Noun Phrase |
-| VP     | Verb Phrase |
-
----
-
-## Viva Points
-
-* Used in syntax checking
-* Uses production rules
-
----
-
-# Q17. Chunking
-
-## Theory
-
-Chunking groups words into meaningful phrases.
-
-Also called:
-
-```python
-Shallow Parsing
-```
-
----
-
-## Noun Phrase Rule
-
-NP \rightarrow Det\ +\ Adj\ +\ Noun
-
----
-
-## Example
-
-```python
-the smart student
-```
-
-* the → Determiner
-* smart → Adjective
-* student → Noun
-
-Together form NP.
-
----
-
-# Q18. RNN Sentiment Analysis
-
-## Theory
-
-RNN (Recurrent Neural Network) processes sequential data.
-
-Used in:
-
-* NLP
-* Translation
-* Sentiment analysis
-
----
-
-## Workflow
-
-```python
-Text
-→ Tokenization
-→ Padding
-→ Embedding
-→ RNN
-→ Prediction
-```
-
----
-
-## Important Layers
-
-| Layer     | Purpose           |
-| --------- | ----------------- |
-| Embedding | word vectors      |
-| SimpleRNN | sequence learning |
-| Dense     | output layer      |
-
----
-
-## Viva Points
-
-* RNN remembers previous information
-* Good for sequential text
-
----
-
-# Q19. Named Entity Recognition (NER)
-
-## Theory
-
-NER identifies important entities from text.
-
----
-
-## Entity Types
-
-| Entity       | Example |
-| ------------ | ------- |
-| Person       | Rahul   |
-| Location     | Mumbai  |
-| Organization | Google  |
-| Date         | Monday  |
-
----
-
-## Example
-
-Sentence:
-
-```python
-Rahul works at Google in Mumbai
-```
-
-Entities:
-
-* Rahul → Person
-* Google → Organization
-* Mumbai → Location
-
----
-
-## Uses
-
-* Information extraction
-* Chatbots
-* Search engines
-* NLP systems
-
----
-
-# Common Python Functions Used in NLP
-
-| Function  | Purpose       |
-| --------- | ------------- |
-| `split()` | tokenize      |
-| `lower()` | lowercase     |
-| `count()` | frequency     |
-| `len()`   | count items   |
-| `set()`   | unique words  |
-| `join()`  | combine text  |
-| `strip()` | remove spaces |
-
----
-
-# Common Regex Shortcuts
-
-| Regex | Meaning     |
-| ----- | ----------- |
-| `\d`  | digit       |
-| `\w`  | word        |
-| `\s`  | whitespace  |
-| `^`   | NOT/start   |
-| `+`   | one or more |
-
----
-
-# Important Viva One-Liners
-
-| Topic             | One-Liner                    |
-| ----------------- | ---------------------------- |
-| Tokenization      | Breaking text into tokens    |
-| Stemming          | Rule-based suffix removal    |
-| Lemmatization     | Dictionary root conversion   |
-| TF-IDF            | Word importance measure      |
-| Cosine Similarity | Vector similarity measure    |
-| Naive Bayes       | Probability-based classifier |
-| CFG               | Grammar-rule based parsing   |
-| Chunking          | Phrase grouping              |
-| RNN               | Sequential neural network    |
-| NER               | Entity extraction from text  |
